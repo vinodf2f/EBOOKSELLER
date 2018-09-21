@@ -32,8 +32,8 @@ app.post('/charge', (req, res)=>
      var transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-          user: 'vinodyevatikar95@gmail.com',
-          pass: 'sumanbai5'
+          user: 'useremail',
+          pass: 'userpass'
         }
       });
       
