@@ -1,0 +1,19 @@
+{
+  "name": "ebookseller",
+  "version": "1.0.0",
+  "description": "App to sell Ebook",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "serve": "nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "nodemon": "^1.18.4",
+    "stripe": "^6.11.0"
+  }
+}
