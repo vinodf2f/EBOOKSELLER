@@ -29,19 +29,19 @@ app.get('/', (req,res) =>
 
 app.post('/charge', (req, res)=>
 {
-    var transporter = nodemailer.createTransport({
+     var transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-          user: 'useremail',
-          pass: 'Upassword'
+          user: 'vinodyevatikar95@gmail.com',
+          pass: 'sumanbai5'
         }
       });
       
       var mailOptions = {
-        from: 'useremail',
+        from: 'F2F LIBRARY TRY6',
         to: req.body.stripeEmail,
-        subject: 'Sending Email using Node.js',
-        html: '<h1>will mail you ur book in 1 or 2 days  </h1>',
+        subject: 'f2fPAY',
+        html: '<p><strong>Click <a href="https://drive.google.com/drive/folders/0B_f4DBi79REyQ1Vsd29WMUhJWmM?usp=sharing">here </a> to read your books</strong><pre>       <sub>just for practice <b>testmode</b></sub></pre></p>',
         text: 'Your invoice Thank u !'
       };
       
