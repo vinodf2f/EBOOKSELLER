@@ -3,6 +3,7 @@ const keys = require('./config/keys');
 const stripe = require('stripe')('sk_test_d4PTrsMOFwM2Q7UsBOKVFlt3');
 const bodyParser = require('body-parser');
 const exphbs = require('express-handlebars');
+const  nodemailer = require('nodemailer');
 
 const app = express();
 
@@ -21,16 +22,40 @@ app.use(express.static(`${__dirname}/public`));
 
 app.get('/', (req,res) =>
 {
-    res.render('index',
-{
-    stripePublishableKey: keys.stripePublishableKey
-});
+    res.render('index',{stripePublishableKey: keys.stripePublishableKey});
 });
 
 //charge route
 
 app.post('/charge', (req, res)=>
 {
+    var transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+          user: 'vinodyevatikar95@gmail.com',
+          pass: 'sumanbai5'
+        }
+      });
+      
+      var mailOptions = {
+        from: 'vinodyevatikar95@gmail.com',
+        to: req.body.stripeEmail,
+        subject: 'Sending Email using Node.js',
+        html: '<h1>will mail you ur book in 1 or 2 days  </h1>',
+        text: 'Your invoice Thank u !'
+      };
+      
+      
+      transporter.sendMail(mailOptions, function(error, info){
+        if (error) {
+          console.log(error);
+        } else {
+          console.log('Email sent: ' + info.response);
+        }
+      });
+    
+     
+
     const amount = 2500;
     stripe.customers.create(
         {
@@ -44,6 +69,7 @@ app.post('/charge', (req, res)=>
         currency:'usd',
         customer : customer.id
     }))
+    
     .then(charge => res.render('success'));
 });
 
