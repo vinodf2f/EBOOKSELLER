@@ -1,7 +1,4 @@
-if(process.env.NOD_ENV === 'production')
-{
-    module.export = require('./keys_prod');
-}
-else{
-    module.export = require('./keys_dev');
+module.exports = {
+    stripePublishableKey: 'pk_test_fXwfXTLa104MIhlx3ooO76Gf',
+    stripeScretKey : 'sk_test_d4PTrsMOFwM2Q7UsBOKVFlt3'
 }
