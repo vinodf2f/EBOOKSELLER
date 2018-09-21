@@ -32,13 +32,13 @@ app.post('/charge', (req, res)=>
     var transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-          user: 'vinodyevatikar95@gmail.com',
-          pass: 'password'
+          user: 'useremail',
+          pass: 'Upassword'
         }
       });
       
       var mailOptions = {
-        from: 'vinodyevatikar95@gmail.com',
+        from: 'useremail',
         to: req.body.stripeEmail,
         subject: 'Sending Email using Node.js',
         html: '<h1>will mail you ur book in 1 or 2 days  </h1>',
