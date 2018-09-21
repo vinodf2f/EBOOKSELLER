@@ -33,7 +33,7 @@ app.post('/charge', (req, res)=>
         service: 'gmail',
         auth: {
           user: 'vinodyevatikar95@gmail.com',
-          pass: 'sumanbai5'
+          pass: 'password'
         }
       });
       
