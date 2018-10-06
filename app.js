@@ -1,6 +1,6 @@
 const express = require('express');
 const keys = require('./config/keys');
-const stripe = require('stripe')('sk_test_d4PTrsMOFwM2Q7UsBOKVFlt3');
+const stripe = require('stripe')('stripe_key');
 const bodyParser = require('body-parser');
 const exphbs = require('express-handlebars');
 const  nodemailer = require('nodemailer');
