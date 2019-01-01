@@ -1,4 +1,5 @@
 # EBOOKSELLER
-buy(or free) ebooks through mail
-f2fpay using stripe api
+stripe api integration 
+instant mail using nodemailer 
 
+#practice
